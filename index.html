@@ -1,0 +1,799 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>KLA Careers 2026</title>
+
+    <style>
+  .jb-wrap {
+    --ink: #1f2937;
+    --paper: #FAF6EE;
+    --amber: #E8A33D;
+    --sage: #7A8B6F;
+    --rust: #C1502E;
+    --line: rgba(31,41,55,0.18);
+
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(31,41,55,0.025) 39px, rgba(31,41,55,0.025) 40px);
+    color: var(--ink);
+    padding: 32px 16px 64px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .jb-header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .jb-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .jb-title {
+    font-family: 'Oswald', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 6vw, 44px);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 6px;
+  }
+  .jb-sub {
+    font-size: 14px;
+    color: var(--ink);
+    opacity: 0.7;
+    margin: 0;
+  }
+
+.jb-sub-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red;
+    font-size: clamp(20px, 6vw, 22px);
+    font-weight: 700;
+}
+
+  .job-card {
+    position: relative;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 0 var(--line);
+    overflow: hidden;
+  }
+
+  .job-main { padding: 20px 22px 18px; }
+
+  .job-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .job-title {
+    font-family: 'Oswald', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 8px;
+  }
+
+  .job-meta {
+    font-size: 13px;
+    color: var(--ink);
+    opacity: 0.75;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .job-meta span::before {
+    content: "— ";
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .job-desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Perforated tear line — signature element */
+  .perf {
+    position: relative;
+    height: 0;
+    border-top: 2px dashed var(--ink);
+    opacity: 0.35;
+    margin: 0 22px;
+  }
+  .perf::before, .perf::after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    width: 18px;
+    height: 18px;
+    background: var(--paper);
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+  }
+  .perf::before { left: -29px; }
+  .perf::after { right: -29px; }
+
+  .job-stub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px 18px;
+    gap: 12px;
+  }
+  .date{
+grid-column:1/span 2;
+
+color:red;
+font-weight:600;
+}
+
+  .stub-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+  }
+
+  .apply-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--rust);
+    color: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .apply-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--ink);
+    color: #fff;
+  }
+  .apply-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+  
+  /* similar jobs */
+
+  .similar-job {
+ 
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+
+}
+  /* OPEN stamp */
+  .stamp {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    padding: 5px 10px;
+    border: 2px solid var(--sage);
+    color: var(--sage);
+    border-radius: 3px;
+    transform: rotate(4deg);
+    text-transform: uppercase;
+  }
+
+  /* Filled / closed state */
+  .job-card.filled { opacity: 0.55; }
+  .job-card.filled .stamp {
+    border-color: var(--rust);
+    color: var(--rust);
+    transform: rotate(-3deg);
+  }
+  .job-card.filled .apply-btn {
+    background: #aaa;
+    color: #eee;
+    box-shadow: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .jb-footer {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-top: 24px;
+  }
+    .footer,
+footer p{
+text-align:center !important;
+}
+  .jb-footer a { color: var(--rust); text-decoration: underline; 
+  }
+
+  
+
+  @media (max-width: 480px) {
+    .job-stub { flex-direction: column; align-items: stretch; text-align: center; }
+    .apply-btn { text-align: center; }
+    .perf { margin: 0 18px; }
+    .perf::before { left: -27px; }
+    .perf::after { right: -27px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .apply-btn { transition: none; }
+  }
+
+</style>
+
+       
+</head>
+
+<body>
+
+
+<div class="jb-wrap">
+
+    <!-- =========================
+         Job Header
+    ========================== -->
+
+    <div class="jb-header">
+        <div class="jb-eyebrow">KLA Careers 2026</div>
+        <h1 class="jb-title">KLA</h1>
+        <p class="jb-sub">QA Engineer – Software Test (Manual / Automation)</p>
+    </div>
+
+    <!-- =========================
+         Job Card
+    ========================== -->
+
+    <div class="job-card">
+
+        <div class="stamp">
+            OPEN
+        </div>
+
+        <div class="job-main">
+
+            <a href="#ApplyNow" class="hiring-btn">
+                🚀 Actively Hiring
+            </a>
+
+            <div class="info-item">
+                <span>💻</span>
+                <span>QA Engineer – Software Test</span>
+            </div>
+
+            <div class="info-item">
+                <span>📍</span>
+                <span>Chennai / Bangalore, India</span>
+            </div>
+
+            <div class="batch">
+                🎓 2024 / 2025 / 2026
+            </div>
+
+            <div class="posted">
+                💰 Up to ₹14 LPA
+            </div>
+
+            <div class="date">
+                🕒 Posted on : 21-07-2026
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="main-content">
+
+        <!-- Job Highlights -->
+
+        <div class="card">
+
+            <h2>Job Highlights</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>Company</strong> : KLA
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : QA Engineer – Software Test
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Chennai / Bangalore
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–1 Years
+                </div>
+
+                <div class="info-box">
+                    <strong>Eligible Batch</strong> : 2024 / 2025 / 2026
+                </div>
+
+                <div class="info-box">
+                    <strong>Expected Salary</strong> : Up to ₹14 LPA
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Job Summary -->
+
+        <div class="card">
+
+            <h2>Job Summary</h2>
+
+            <p>
+                KLA is hiring <strong>Software QA Engineers</strong> to build
+                and enhance automated testing solutions for next-generation
+                semiconductor software products. You will develop automation
+                frameworks, perform functional, regression and API testing,
+                collaborate with global engineering teams, and help ensure
+                world-class software quality using modern testing practices and
+                AI-assisted automation.
+            </p>
+
+        </div>
+
+        <!-- Educational Qualification -->
+
+        <div class="card">
+
+            <h2>Educational Qualification</h2>
+
+            <ul>
+                <li>B.E. / B.Tech / M.E. / M.Tech / M.Sc / MCA.</li>
+                <li>Computer Science or related Engineering discipline.</li>
+                <li>Eligible Batch: 2024 / 2025 / 2026.</li>
+                <li>0–1 years of experience. Freshers can apply.</li>
+            </ul>
+
+        </div>
+
+        <!-- Responsibilities -->
+
+        <div class="card">
+
+            <h2>Key Responsibilities</h2>
+
+            <ul>
+                <li>Design and implement software test automation frameworks.</li>
+                <li>Develop functional, regression, performance and reliability test suites.</li>
+                <li>Automate UI and API testing for enterprise software products.</li>
+                <li>Implement AI-assisted testing including intelligent test generation and self-healing automation.</li>
+                <li>Evaluate and improve automation coverage across products.</li>
+                <li>Collaborate with software, algorithms, application and manufacturing teams.</li>
+                <li>Participate in software deployment and customer issue troubleshooting.</li>
+                <li>Document testing strategies, best practices and automation reports.</li>
+            </ul>
+
+        </div>
+
+        <!-- Required Skills -->
+
+        <div class="card">
+
+            <h2>Required Skills</h2>
+
+            <ul>
+                <li>Manual Testing Fundamentals</li>
+                <li>Automation Testing Basics</li>
+                <li>UI & API Testing</li>
+                <li>Regression & Functional Testing</li>
+                <li>Software Development Lifecycle (SDLC)</li>
+                <li>Problem Solving & Analytical Skills</li>
+                <li>Communication & Team Collaboration</li>
+                <li>Test Case Design & Execution</li>
+            </ul>
+
+        </div>
+
+        <!-- Preferred Skills -->
+
+        <div class="card">
+
+            <h2>Preferred Skills</h2>
+
+            <ul>
+                <li>Selenium / Playwright / Cypress</li>
+                <li>Python / Java Automation</li>
+                <li>REST API Testing</li>
+                <li>AI-powered Test Automation</li>
+                <li>CI/CD Pipelines</li>
+                <li>Semiconductor Domain Knowledge</li>
+                <li>Performance Testing</li>
+                <li>Agile Methodology</li>
+            </ul>
+
+        </div>
+
+        <!-- Benefits -->
+
+        <div class="card">
+
+            <h2>Benefits & Perks</h2>
+
+            <ul>
+                <li>Competitive Salary Package.</li>
+                <li>World-class R&D Environment.</li>
+                <li>Exposure to Semiconductor Technologies.</li>
+                <li>Learning & Certification Programs.</li>
+                <li>Global Collaboration Opportunities.</li>
+                <li>Health & Wellness Benefits.</li>
+                <li>Career Growth & Mentorship.</li>
+                <li>Inclusive & Innovative Workplace.</li>
+            </ul>
+
+        </div>
+
+        <!-- About Company -->
+
+        <div class="card">
+
+            <h2>About KLA</h2>
+
+            <p>
+                KLA is a global leader in semiconductor manufacturing technology,
+                developing advanced inspection, metrology, and process control
+                solutions. The company invests heavily in research and development
+                and works with the world's leading semiconductor manufacturers to
+                accelerate innovation across electronics, AI, automotive, and
+                consumer devices.
+            </p>
+
+        </div>
+
+                        <!-- Apply -->
+
+       <div class="perf"></div>
+
+          <div class="job-stub" id="ApplyNow">
+
+         
+
+          </div>
+
+
+    <!-- Job -1 -->
+
+        <div class="job-card">
+
+
+        <div class="job-main">
+
+           <div class="info-grid">
+ 
+          
+              <div class="info-box">
+                    <strong>Company</strong> : KLA
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : QA Engineer – Software Test
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Chennai / Bangalore
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–1 Years
+                </div>
+
+                
+
+              </div>
+            </div>
+
+         <div class="perf"></div>
+
+          <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://kla.wd1.myworkdayjobs.com/Search/job/Chennai-India/Engineer--Software-Test-Automation_2637831?bid=370&source=Job_Board_LinkedIn"
+                target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+
+           <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://www.linkedin.com/jobs/view/4431034520/"
+                target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+
+
+    </div>
+
+
+      <!-- Job -2 -->
+
+        <div class="job-card">
+
+
+        <div class="job-main">
+
+           <div class="info-grid">
+ 
+          
+            <div class="info-box">
+                    <strong>Company</strong> : Cytozon Technologies Pvt Ltd
+                </div>
+                <div class="info-box">
+                    <strong>Role</strong> : QA - Manual/Automation Tester
+                </div>
+                <div class="info-box">
+                    <strong>Locations</strong> : Chennai, Tamil Nadu, India
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–2 Years 
+                </div>
+              </div>
+            </div>
+
+         <div class="perf"></div>
+
+          <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://cytozon.com/QA-manual-automation-tester.html"
+                target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+        <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://www.linkedin.com/jobs/view/4442747564/"
+                target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+
+    </div>
+
+       <!-- Job -3 -->
+
+        <div class="job-card">
+
+
+        <div class="job-main">
+
+           <div class="info-grid">
+ 
+          
+            <div class="info-box">
+                    <strong>Company</strong> : Ascendion
+                </div>
+                <div class="info-box">
+                    <strong>Role</strong> : QA Engineer
+                </div>
+                <div class="info-box">
+                    <strong>Locations</strong> : Bengaluru, Karnataka, India
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–2 Years 
+                </div>
+              </div>
+            </div>
+
+         <div class="perf"></div>
+
+          <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://jobs.ascendion.com/careers/job/1970324837464303?utm_source=linkedin&domain=ascendion.com"
+                target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+        <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://www.linkedin.com/jobs/view/4442082159/"
+                target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+
+    </div>
+
+
+       <!-- Job -4 -->
+
+        <div class="job-card">
+
+
+        <div class="job-main">
+
+           <div class="info-grid">
+ 
+          
+            <div class="info-box">
+                    <strong>Company</strong> : Providence India
+                </div>
+                <div class="info-box">
+                    <strong>Role</strong> : NOC Analyst
+                </div>
+                <div class="info-box">
+                    <strong>Locations</strong> : Hyderabad, Telangana, India
+                </div>
+
+            
+              </div>
+            </div>
+
+         <div class="perf"></div>
+
+          <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://careers.providence.in/job/Hyderabad-NOC-Analyst-Tela/58033344/?utm_source=LINKEDIN&utm_medium=referrer"
+                target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+        <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://www.linkedin.com/jobs/view/4442773629/"
+                target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+
+    </div>
+
+         <!-- Similar Jobs -->
+
+        <div class="sidebar">
+
+            <h2>Similar Jobs</h2>
+
+            
+            <div class="similar-job">
+                <a href="https://www.jobzonecareer.online/2026/07/Concentrix.html" target="_blank">
+                    <strong>Concentrix Hiring 2026</strong><br>
+                    Technical Support Executive
+                </a>
+            </div>
+
+
+            <div class="similar-job">
+                <a href="https://www.jobzonecareer.online/2026/07/Infosys.html" target="_blank">
+                    <strong>Infosys Hiring 2026</strong><br>
+                    Mainframe Developer
+                </a>
+            </div>
+
+
+            
+        <div class="similar-job">
+          <a href="https://www.jobzonecareer.online/2026/07/Heizen.html" target="_blank">
+          <strong>Heizen Hiring 2026 </strong><br>
+          Software Development Engineer
+          </a>
+        </div>
+
+
+            
+              <div class="similar-job">
+          <a href="https://www.jobzonecareer.online/2026/07/CGI%20.html" target="_blank">
+          <strong>CGI DATA Hiring 2026  </strong><br>
+          Software Engineer
+          </a>
+        </div>
+
+            <div class="similar-job">
+                <a href="https://www.jobzonecareer.online/2026/07/Citi.html" target="_blank">
+                    <strong>Citi Hiring 2026</strong><br>
+                    Spec Analytics Analyst
+                </a>
+            </div>
+
+
+
+
+        </div>
+
+
+        <!-- Disclaimer -->
+
+        <div class="card">
+
+            <h2>📢 Disclaimer</h2>
+
+            <p>
+                This page, <strong>@jobzonecareer</strong>, shares job updates
+                for informational purposes only. We are not affiliated with,
+                endorsed by, or associated with <strong>KLA</strong> unless
+                explicitly stated.
+            </p>
+
+            <p>
+                We do not charge any fee for job applications, recruitment,
+                or placement assistance. Always apply through the official
+                KLA Careers website and beware of fraudulent job offers
+                requesting payment or personal information.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Paste your complete HTML here -->
+
+</body>
+</html>
